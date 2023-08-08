@@ -1,7 +1,7 @@
 package com.blurdel.app;
 
+import com.blurdel.app.consumer.MyApplication;
 import com.blurdel.app.di.AppInjector;
-import com.blurdel.consumer.MyApplication;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 

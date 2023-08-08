@@ -7,9 +7,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.blurdel.app.consumer.MyApplication;
 import com.blurdel.app.service.MessageService;
 import com.blurdel.app.service.MockMessageService;
-import com.blurdel.consumer.MyApplication;
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
