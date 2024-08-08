@@ -1,13 +1,13 @@
 package com.blurdel.app.service;
 
-import jakarta.inject.Singleton;
+import com.google.inject.Singleton;
 
 @Singleton
-public class FacebookService implements MessageService {
+public class FacebookService implements IMessageService {
 
 	@Override
-	public boolean sendMessage(String pMsg, String pRecipient) {
-		System.out.println("Message sent to Facebook user " + pRecipient + " with message: " + pMsg);
+	public boolean sendMessage(String pRecipient, String pMsg) {
+		System.out.println("Facebook post sent to " + pRecipient + ", " + pMsg);
 		return true;
 	}
 

@@ -1,13 +1,13 @@
 package com.blurdel.app.service;
 
-import jakarta.inject.Singleton;
+import com.google.inject.Singleton;
 
 @Singleton
-public class EmailService implements MessageService {
+public class EmailService implements IMessageService {
 
 	@Override
-	public boolean sendMessage(String pMsg, String pRecipient) {
-		System.out.println("Email sent to " + pRecipient + " with message: " + pMsg);
+	public boolean sendMessage(String pRecipient, String pMsg) {
+		System.out.println("Email sent to " + pRecipient + ", " + pMsg);
 		return true;
 	}
 

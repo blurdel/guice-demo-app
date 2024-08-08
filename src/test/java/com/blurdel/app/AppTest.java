@@ -7,15 +7,14 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.blurdel.app.consumer.MyApplication;
-import com.blurdel.app.service.MessageService;
+import com.blurdel.app.service.IMessageService;
 import com.blurdel.app.service.MockMessageService;
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
 
-public class ClientApplicationTest 
+public class AppTest 
 {
 	private Injector injector;
 	
@@ -25,7 +24,7 @@ public class ClientApplicationTest
 		injector = Guice.createInjector(new AbstractModule() {
 			@Override
 			protected void configure() {
-				bind(MessageService.class).to(MockMessageService.class);
+				bind(IMessageService.class).to(MockMessageService.class);
 			}
 		});
 	}
@@ -37,12 +36,12 @@ public class ClientApplicationTest
 	
 	@Test
 	public void test() {
-		MyApplication appTest = injector.getInstance(MyApplication.class);
+		IMessageService appTest = injector.getInstance(IMessageService.class);
 		assertEquals(true, appTest.sendMessage("user", "email@mail.com"));
 	}
 	
     @Test
-    public void shouldAnswerWithTrue() {
+    public void alwaysTrue() {
         assertTrue(true);
     }
 }

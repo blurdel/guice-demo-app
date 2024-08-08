@@ -1,9 +1,13 @@
 package com.blurdel.app.service;
 
-public class MockMessageService implements MessageService{
+import com.google.inject.Singleton;
 
-    public boolean sendMessage(String pMsg, String pReceipient) {
-        return true;
-    }
+@Singleton
+public class MockMessageService implements IMessageService {
+
+	@Override
+	public boolean sendMessage(String pRecipient, String pMsg) {
+		return true;
+	}
 
 }
